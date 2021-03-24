@@ -17,19 +17,18 @@ version = "0.3.0"
 authors = ["jjy <jjyruby@gmail.com>"]
 description = "CKB contract testing tools"
 license = "MIT"
-[dependencies.ckb-always-success-script]
-version = "0.0.1"
 
-[dependencies.ckb-tool]
-version = "0.3.0"
-
-[dependencies.lazy_static]
-version = "1.4"
-
-[dependencies.linked_hash_set]
-version = "0.1"
-
-[dependencies.rand]
-version = "0.7"
-[dev-dependencies.ckb-system-scripts]
-version = "0.5"
+[dependencies]
+ckb-chain-spec = "0.40"
+ckb-always-success-script = "0.0.1"
+ckb-types = "0.40"
+ckb-error = "0.40"
+ckb-script = "0.40"
+ckb-hash = "0.40"
+ckb-crypto = "0.40"
+ckb-system-scripts = "0.5"
+ckb-traits = "0.40"
+derive_more = "0.99"
+rand = "0.7"
+linked_hash_set = "0.1"
+lazy_static = "1.4"
