@@ -1,7 +1,7 @@
 use crate::context::Context;
-use ckb_system_scripts::BUNDLED_CELL;
 use ckb_crypto::secp::{Generator, Privkey};
 use ckb_hash::{blake2b_256, new_blake2b};
+use ckb_system_scripts::BUNDLED_CELL;
 use ckb_types::{
     bytes::Bytes,
     core::{TransactionBuilder, TransactionView},
@@ -145,7 +145,7 @@ fn test_load_header() {
     let test_contract_bin = fs::read(TEST_CONTRACT_PATH).unwrap();
     let lock_out_point = context.deploy_cell(test_contract_bin.to_vec().into());
     let lock_script = context
-        .build_script(&lock_out_point, Default::default())
+        .build_script(&lock_out_point, Bytes::from(vec![42]))
         .expect("script")
         .as_builder()
         .build();
